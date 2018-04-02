@@ -1,0 +1,9 @@
+docker build -t mysite .
+docker run -p 80:80 -d -v /home/lewandowski/Downloads/dockerWeb/www:/var/www/site mysite
+
+apt-get install mysql-server
+service mysql restart
+mysql
+create database engage;
+exit
+mysql -u root engage < /var/www/site/engage.sql
